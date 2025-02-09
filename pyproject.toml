@@ -1,0 +1,10 @@
+[project]
+name = "poc-xss-django-gravatar2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django==4.2.19",
+    "django-gravatar2==1.4.4",
+]

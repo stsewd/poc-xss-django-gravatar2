@@ -1,0 +1,26 @@
+{% load gravatar from gravatar %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+  </head>
+  <body>
+    <form>
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+    </form>
+
+    {% if form.is_valid %}
+      <h2>Name as alt text</h2>
+      {% gravatar form.cleaned_data.email 50 form.cleaned_data.first_name %}
+
+      <h2>Email as alt text</h2>
+      {% gravatar form.cleaned_data.email 50 form.cleaned_data.email %}
+    {% else %}
+    <p><strong>Form is not valid</strong></p>
+    {% endif %}
+  </body>
+</html>
